@@ -1,9 +1,15 @@
 <?php
-
-
+require_once('constants.php');
+require_once(GLOBALS);
 $uri = $_SERVER['REQUEST_URI'];
 
 $splode = explode('/', $uri);
+if (!isset($splode[1]) || $splode[1] === "")
+{
+	return_view('view.home.php');
+	sys_msg("No route defined");
+	return;
+}
 
 if (isset($splode[1]) && $splode[1] !== "")
 {
@@ -35,6 +41,7 @@ require_once('/var/www/word-parser/controllers/' . $controllerFile);
 $controllerClass = $controller . "Controller";
 $controllerNew = new $controllerClass();
 
-var_dump($controllerNew);
+// Call controller and method and send apram if it exists, if not it'll just send NULL
+$controllerNew->$method($param);
 
 ?>

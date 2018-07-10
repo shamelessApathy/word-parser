@@ -1,0 +1,21 @@
+.sys-msg
+{
+	width:200px;
+	border:2px solid red;
+	height:150px;
+	background-color:#ccc;
+	position:relative;
+}
+.user-msg
+{
+	width:200px;
+	border:2px solid green;
+	height:150px;
+	background-color:#ccc;
+}
+.msg-closer
+{
+	right:0;
+	position:absolute;
+	z-index:3;
+}

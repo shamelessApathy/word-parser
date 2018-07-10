@@ -1,11 +1,7 @@
 <?php
-
-class Parse {
+require_once(GLOBALS);
+class ParseDocX {
     
-    public function talk()
-    {
-        return "This is the Parser class talking";
-    }
     public function read_file_docx($filename){
 
         $striped_content = '';
